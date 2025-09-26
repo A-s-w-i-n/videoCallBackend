@@ -9,7 +9,8 @@ const server = http.createServer(app);
 // Configure CORS
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    // origin: "http://localhost:5173",
+    origin: "https://web-rtc-video-call-4585.vercel.app/",
     credentials: true,
   })
 );
