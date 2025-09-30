@@ -139,6 +139,7 @@ function handleCreateRoom(ws, connectionId, { roomName, userName }) {
 
 function handleJoinRoom(ws, connectionId, { roomName, userName }) {
   if (!rooms.has(roomName)) {
+    console.log(ws,connectionId,roomName,userName)
     sendToClient(ws, "room-error", { message: "Room does not exist" });
     return;
   }
