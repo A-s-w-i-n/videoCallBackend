@@ -4,7 +4,7 @@ const WebSocket = require("ws");
 const cors = require("cors");
 
 const app = express();
-const server = http.createServer(app);
+const server = http.createServer(app);  
 
 // Configure CORS
 app.use(
@@ -147,7 +147,7 @@ function handleJoinRoom(ws, connectionId, { roomName, userName }) {
   const room = rooms.get(roomName);
 
   // Check if room is full (limit to 2 users for peer-to-peer)
-  if (room.users.length >= 2) {
+  if (room.users.length >= 6) {
     sendToClient(ws, "room-error", { message: "Room is full" });
     return;
   }
